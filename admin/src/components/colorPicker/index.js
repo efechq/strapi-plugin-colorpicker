@@ -31,13 +31,14 @@ const Cover = styled.div`
 const ColorPicker = (props) => {
   const [showPicker, setShowPicker] = useState(false);
   const [color, setColor] = useState(props.value ? props.value : '#FFFFFF');
+  const colorFieldName = props.name;
 
   /**
    * Makes the color value available to the document for database update
    * @param {string} colorValue - in hex format
    */
   const updateColorValue = (colorValue) => {
-    props.onChange({ target: { name: 'color', value: colorValue } });
+    props.onChange({ target: { name: colorFieldName, value: colorValue } });
   };
 
   /**
@@ -60,7 +61,7 @@ const ColorPicker = (props) => {
 
   return (
     <div>
-      <Title>Color Tag</Title>
+      <Title>{colorFieldName}</Title>
       <ColorWindow color={color} onClick={() => setShowPicker(true)} />
       {showPicker ? (
         <PopOver>
