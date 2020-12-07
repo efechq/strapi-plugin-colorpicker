@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ChromePicker } from 'react-color';
 import styled from 'styled-components';
 
-
 const Title = styled.h5`
   margin-bottom: 1rem;
   color: #333740;
@@ -61,7 +60,7 @@ const ColorPicker = (props) => {
 
   return (
     <div>
-      <Title>{props.name}</Title>
+      <Title>Color Tag</Title>
       <ColorWindow color={color} onClick={() => setShowPicker(true)} />
       {showPicker ? (
         <PopOver>
@@ -74,3 +73,4 @@ const ColorPicker = (props) => {
 };
 
 export default ColorPicker;
+
